@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Money Muling Detection Engine</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Cytoscape Graph Library -->
+  <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Money Muling Detection Engine</h1>
+
+    <input type="file" id="fileInput" accept=".csv" />
+    <button onclick="uploadFile()">Analyze</button>
+
+    <button id="downloadBtn" onclick="downloadJSON()" style="display:none;">
+      Download JSON
+    </button>
+
+    <div id="graph"></div>
+
+    <h2 id="ringTitle" style="display:none;">Fraud Rings Detected</h2>
+    <table id="ringsTable" style="display:none;">
+      <thead>
+        <tr>
+          <th>Ring ID</th>
+          <th>Pattern</th>
+          <th>Members</th>
+          <th>Risk Score</th>
+          <th>Accounts</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
